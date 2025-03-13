@@ -9,137 +9,72 @@
 
 /* Body Styling */
 body {
-    overflow: hidden;
     background: black;
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+/* Fullscreen Video Background */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Navbar */
 .navbar {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.5);
     padding: 10px 0;
-}
-
-.navbar-toggler {
-    border: none;
-}
-
-.navbar-toggler-icon {
-    background-color: white;
-    border-radius: 3px;
-    padding: 5px;
-}
-
-.navbar-nav .nav-item {
-    margin-left: 20px;
-}
-
-.navbar-nav .nav-link {
-    color: white;
-    font-size: 18px;
-    transition: color 0.3s;
-}
-
-.navbar-nav .nav-link:hover {
-    color: red;
-    text-shadow: 0 0 10px black;
-}
-
-.btn-light {
-    border-radius: 50px;
-    padding: 8px 15px;
-    font-weight: bold;
-    transition: 0.3s ease;
-}
-
-.btn-light:hover {
-    background-color: red;
-    color: white;
-}
-
-/* Dropdown Menu */
-.dropdown-menu {
-    background: rgba(0, 0, 0, 0.8);
-    border: none;
-}
-
-.dropdown-item {
-    color: white;
-}
-
-.dropdown-item:hover {
-    background: red;
-    color: white;
-}
-
-/* Video Background (Unchanged) */
-video {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    z-index: -2;
-    min-width: 100%;
-    min-height: 100%;
 }
 
 /* Hero Section */
 .myinfo {
     position: relative;
-    top: 200px;
-    left: 150px;
-    width: 500px;
-    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.73);
+    width: 90%;
+    max-width: 600px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1.5s ease-out;
 }
 
+/* Typography */
 h1 {
-    font-size: 90px;
+    font-size: clamp(2rem, 8vw, 5rem);
     font-weight: bold;
+    animation: zoomIn 1.5s ease-out;
 }
 
-/* Holi Text Styling (Unchanged) */
 .holi {
-    font-size: 90px;
+    font-size: clamp(2rem, 8vw, 5rem);
     font-weight: bold;
-    color: transparent;
-    background-clip: border-box;
     color: whitesmoke;
+    animation: slideIn 2s ease-in-out;
 }
 
-/* Hue Animation (Unchanged) */
 .hue {
     color: rgb(240, 81, 2);
     font-weight: bold;
     animation: hue 5s infinite;
 }
 
-@keyframes hue {
-    0% {
-        -webkit-filter: hue-rotate(0deg);
-    }
-    100% {
-        -webkit-filter: hue-rotate(700deg);
-    }
-}
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    h1 {
-        font-size: 50px;
-    }
-
-    .myinfo {
-        top: 15vh;
-        left: 10%;
-        width: 80%;
-        text-align: center;
-    }
-
-    .navbar-nav {
-        text-align: center;
-        width: 100%;
-    }
-
-    .navbar-nav .nav-item {
-        margin: 10px 0;
-    }
-}
+/* Button Styling */
+.btn-light {
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: 0.3s ease
